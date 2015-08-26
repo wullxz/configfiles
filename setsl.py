@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from subprocess import call
-import os.path 
+import os.path
 
 fileasoc = [
   ["vimrc", "~/.vimrc"],
@@ -18,8 +18,10 @@ for f in fileasoc:
   target = os.path.join(scriptdir, f[0])
   override = True
   print "Trying to link %s to %s" % (source, target)
-  if (os.path.isfile(source) or os.path.islink(source)):
-    choice = raw_input("File %s already exists! Override? [y/n] " % source).lower()
+
+    # link or file already exists! ask if it should be replaced
+  if (os.path.exists(source) or os.path.islink(source)):
+    choice = raw_input("File %s already exists! Override? [Y/n] " % source).lower()
     if choice in yes:
       call(["rm", source])
       override = True
@@ -32,7 +34,6 @@ for f in fileasoc:
   else:
     print "File %s not existing... doing symlink now!" % source
 
-  
   if override:
     print "Linking %s to %s" % (source, target)
     call(["ln", "-s", target, source])
