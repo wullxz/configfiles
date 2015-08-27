@@ -13,7 +13,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 
 call vundle#end()            " required
-"filetype plugin indent on    " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -46,14 +46,13 @@ set cursorline
 
 set noexpandtab " Make sure that every file uses real tabs, not spaces
 set shiftround  " Round indent to multiple of 'shiftwidth'
-set smartindent " Do smart indenting when starting a new line
 set autoindent  " Copy indent from current line, over to the new line
 
 " Set the tab width
 let s:tabwidth=2
-exec 'set tabstop='    .s:tabwidth
-exec 'set shiftwidth=' .s:tabwidth
-exec 'set softtabstop='.s:tabwidth
+au Filetype * let &l:tabstop = s:tabwidth
+au Filetype * let &l:shiftwidth = s:tabwidth
+au Filetype * let &l:softtabstop = s:tabwidth
 
 set background=dark
 colorscheme molokai
