@@ -61,3 +61,6 @@ fi
 
 # mint-fortune
 /usr/bin/mint-fortune
+
+# add tools to path
+PATH=$PATH:/home/ms/tools/
