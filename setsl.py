@@ -1,18 +1,27 @@
 #!/usr/bin/python
 
 from subprocess import call
+from os.path import isfile, join
+from os import listdir
 import os.path
 import sys
 
 assumeyes = False
+runscripts = False
 
-if (len(sys.argv) > 1):
-  if (len(sys.argv) == 2):
-    if (sys.argv[1] == "--assumeyes" or sys.argv[1] == "-a"):
-      assumeyes = True
+argiterator = iter(sys.argv)
+next(argiterator)
+for arg in argiterator:
+  if (arg == "--assume-yes" or arg == "-a"):
+    assumeyes = True
+  elif (arg == "-s" or arg == "--run-scripts"):
+    runscripts = True
   else:
-    print "Usage: setsl.py [-a|--assumeyes]"
+    print "Usage: setsl.py [-a|--assume-yes] [-s|--run-scripts]"
     print "\t-a|--assumeyes: assumes 'yes' for all questions"
+    print "\t-s|--run-scripts: runs scripts in scripts/ folder"
+    sys.exit(-1)
+
 
 
 fileasoc = [
@@ -55,3 +64,9 @@ for f in fileasoc:
     call(["ln", "-s", target, source])
 
   print ""
+
+scriptdir = os.path.join(scriptdir, "scripts")
+files = [ f for f in listdir(scriptdir) if isfile(join(scriptdir, f)) ]
+
+for f in files:
+  call([(join(scriptdir, f))])
