@@ -11,6 +11,7 @@ Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +44,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 syntax on
 set number
 set cursorline
+set nofoldenable
 
 set noexpandtab " Make sure that every file uses real tabs, not spaces
 set shiftround  " Round indent to multiple of 'shiftwidth'
