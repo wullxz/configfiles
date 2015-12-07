@@ -12,6 +12,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -27,6 +28,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" ==== general settings ====
+let mapleader = "," " rebind <Leader> key
+set autoread
+" bind Ctrl+<movement> keys to move around the windows, instead of using
+" Ctrl+w + <movement>
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 " ==== Plugin Configs ====
 " = AIRLINE:
 set laststatus=2
@@ -34,10 +45,11 @@ set t_Co=256
 set guifont=Source\ Code\ Pro\ Medium\ 12
 " = NERDTree
 let NERDTreeWinPos='right'
-noremap <c-\> :NERDTreeToggle<cr>
+noremap <Leader>k :NERDTreeToggle<cr>
 noremap \nf :NERDTreeFind<cr>
 map <F9> :NERDTree<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufWinEnter * NERDTreeMirror
 
 " ==== Appearance ========
 
@@ -56,10 +68,11 @@ au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
 au Filetype * let &l:softtabstop = s:tabwidth
 
-set background=dark
+"set background=dark
 colorscheme molokai
 
 " ==== keyboard shortcuts ====
-map <F8> :tabn<CR>
-map <F7> :tabp<CR>
+map <Leader>m :tabn<CR>
+map <Leader>n :tabp<CR>
 map @ :wincmd w<CR>
+
