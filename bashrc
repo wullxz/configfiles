@@ -115,3 +115,16 @@ fi
 
 # add tools to path
 PATH=$PATH:/home/ms/tools/
+
+# helper functions
+
+function fsu {
+	cmd=`fc -ln -1`
+	sudo $cmd
+}
+
+function sfs {
+	sshfs $1 $2 -o uid=$(id -u) -o gid=$(id -g) -o allow_other
+}
+
+alias clip='xclip -sel clip'
