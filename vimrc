@@ -41,7 +41,6 @@ map <c-h> <c-w>h
 " ==== Plugin Configs ====
 " = AIRLINE:
 set laststatus=2
-set t_Co=256
 set guifont=Source\ Code\ Pro\ Medium\ 12
 " = NERDTree
 let NERDTreeWinPos='right'
@@ -68,11 +67,17 @@ au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
 au Filetype * let &l:softtabstop = s:tabwidth
 
-"set background=dark
+set t_Co=256
+set background=dark
 colorscheme molokai
+" this fixes background problems in putty
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+highlight CursorLine ctermbg=NONE
 
 " ==== keyboard shortcuts ====
 map <Leader>m :tabn<CR>
 map <Leader>n :tabp<CR>
-map @ :wincmd w<CR>
 
+" ==== html and php key bindings ===
+autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
