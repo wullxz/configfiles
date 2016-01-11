@@ -115,3 +115,8 @@ fi
 
 # add tools to path
 PATH=$PATH:/home/ms/tools/
+alias lls='lxc-ls --fancy'
+alias lstart='lxc-start -d'
+alias lcreate='lxc-create'
+alias lstop='lxc-stop'
+alias ldestroy='lxc-destroy'
