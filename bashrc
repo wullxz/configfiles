@@ -128,3 +128,9 @@ function sfs {
 }
 
 alias clip='xclip -sel clip'
+alias sql=sqlite3
+alias ptim='env timdata=~/Dropbox/tim/ tim'
+
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
