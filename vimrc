@@ -60,6 +60,8 @@ set nofoldenable
 set noexpandtab " Make sure that every file uses real tabs, not spaces
 set shiftround  " Round indent to multiple of 'shiftwidth'
 set autoindent  " Copy indent from current line, over to the new line
+set shiftwidth=2
+set	tabstop=2
 
 " Set the tab width
 let s:tabwidth=2
@@ -81,3 +83,7 @@ map <Leader>n :tabp<CR>
 
 " ==== html and php key bindings ===
 autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
+
+" ==== dbext variables ===
+let g:dbext_default_profile_sqlite = 'type=SQLITE:dbname=~/.tim/db.sqlite'
+let g:dbext_default_profile = 'sqlite'

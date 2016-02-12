@@ -131,3 +131,7 @@ function fsu {
 function sfs {
 	sshfs $1 $2 -o uid=$(id -u) -o gid=$(id -g) -o allow_other
 }
+
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
