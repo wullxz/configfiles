@@ -26,7 +26,8 @@ for arg in argiterator:
 
 fileasoc = [
   ["vimrc", "~/.vimrc"],
-  ["bashrc", "~/.bashrc"]
+  ["bashrc", "~/.bashrc"],
+  ["tmux.conf", "~/.tmux.conf"]
 ]
 
 yes = set(['yes', 'y', 'ye', ''])
