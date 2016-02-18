@@ -79,5 +79,9 @@ highlight CursorLine ctermbg=NONE
 map <Leader>m :tabn<CR>
 map <Leader>n :tabp<CR>
 
+" ==== run current file and display output in new buffer ====
+nnoremap <C-h> :w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR>:q!
+inoremap <C-h> <ESC>:w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR>:q!
+
 " ==== html and php key bindings ===
 autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
