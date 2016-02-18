@@ -115,7 +115,15 @@ fi
 
 # add tools to path
 PATH=$PATH:/home/ms/tools/
-alias lls='lxc-ls --fancy'
+
+# useful lxc aliases
+lxc-ls --fancy > /dev/null 2>&1
+fancy=$?
+if [[ $fancy -eq 0 ]]; then
+	alias lls='lxc-ls --fancy'
+else
+	alias lls='lxc-ls -1'
+fi
 alias lstart='lxc-start -d'
 alias lcreate='lxc-create'
 alias lstop='lxc-stop'
