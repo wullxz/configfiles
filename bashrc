@@ -124,10 +124,10 @@ if [[ $fancy -eq 0 ]]; then
 else
 	alias lls='lxc-ls -1'
 fi
-alias lstart='lxc-start -d'
-alias lcreate='lxc-create'
-alias lstop='lxc-stop'
-alias ldestroy='lxc-destroy'
+alias lstart='lxc-start -d -n'
+alias lcreate='lxc-create -n'
+alias lstop='lxc-stop -n'
+alias ldestroy='lxc-destroy -n'
 
 # helper functions
 
