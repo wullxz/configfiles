@@ -116,6 +116,19 @@ fi
 # add tools to path
 PATH=$PATH:/home/ms/tools/
 
+# useful lxc aliases
+lxc-ls --fancy > /dev/null 2>&1
+fancy=$?
+if [[ $fancy -eq 0 ]]; then
+	alias lls='lxc-ls --fancy'
+else
+	alias lls='lxc-ls -1'
+fi
+alias lstart='lxc-start -d -n'
+alias lcreate='lxc-create -n'
+alias lstop='lxc-stop -n'
+alias ldestroy='lxc-destroy -n'
+
 # helper functions
 
 function fsu {
@@ -127,4 +140,6 @@ function sfs {
 	sshfs $1 $2 -o uid=$(id -u) -o gid=$(id -g) -o allow_other
 }
 
-alias clip='xclip -sel clip'
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
