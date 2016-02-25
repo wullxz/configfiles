@@ -128,6 +128,8 @@ alias lstart='lxc-start -d -n'
 alias lcreate='lxc-create -n'
 alias lstop='lxc-stop -n'
 alias ldestroy='lxc-destroy -n'
+alias linfo='lxc-info -n'
+alias lattach='lxc-attach -n'
 
 # helper functions
 
