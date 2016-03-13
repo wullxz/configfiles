@@ -69,13 +69,18 @@ au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
 au Filetype * let &l:softtabstop = s:tabwidth
 
+" colors and themes
 set t_Co=256
 set background=dark
 colorscheme molokai
+
 " this fixes background problems in putty
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 highlight CursorLine ctermbg=NONE
+
+" special files
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " ==== keyboard shortcuts ====
 map <Leader>m :tabn<CR>
