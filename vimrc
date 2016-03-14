@@ -69,21 +69,26 @@ au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
 au Filetype * let &l:softtabstop = s:tabwidth
 
+" colors and themes
 set t_Co=256
 set background=dark
 colorscheme molokai
+
 " this fixes background problems in putty
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 highlight CursorLine ctermbg=NONE
+
+" special files
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " ==== keyboard shortcuts ====
 map <Leader>m :tabn<CR>
 map <Leader>n :tabp<CR>
 
 " ==== run current file and display output in new buffer ====
-nnoremap <C-i> :w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR>:q!
-inoremap <C-i> <ESC>:w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR>:q!
+"nnoremap <C-h> :w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR><CR>:q!
+"inoremap <C-h> <ESC>:w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR><CR>:q!
 
 " ==== html and php key bindings ===
 autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
