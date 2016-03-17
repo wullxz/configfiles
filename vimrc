@@ -57,7 +57,7 @@ set number
 set cursorline
 set nofoldenable
 
-set noexpandtab " Make sure that every file uses real tabs, not spaces
+set expandtab " Make sure that every file uses spaces
 set shiftround  " Round indent to multiple of 'shiftwidth'
 set autoindent  " Copy indent from current line, over to the new line
 set shiftwidth=2
