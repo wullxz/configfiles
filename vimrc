@@ -11,8 +11,8 @@ Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'pearofducks/ansible-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -93,6 +93,3 @@ map <Leader>n :tabp<CR>
 " ==== html and php key bindings ===
 autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
 
-" ==== dbext variables ===
-let g:dbext_default_profile_sqlite = 'type=SQLITE:dbname=~/.tim/db.sqlite'
-let g:dbext_default_profile = 'sqlite'

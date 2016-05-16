@@ -130,6 +130,7 @@ alias lstop='lxc-stop -n'
 alias ldestroy='lxc-destroy -n'
 alias linfo='lxc-info -n'
 alias lattach='lxc-attach -n'
+alias tmux="TERM=screen-256color-bce tmux"
 
 # helper functions
 
