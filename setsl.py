@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from subprocess import call
 from os.path import isfile, join
@@ -27,6 +27,7 @@ for arg in argiterator:
 fileasoc = [
   ["vimrc", "~/.vimrc"],
   ["bashrc", "~/.bashrc"],
+  ["inputrc", "~/.inputrc"],
   ["tmux.conf", "~/.tmux.conf"]
 ]
 
