@@ -13,6 +13,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'briancollins/vim-jst'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,6 +51,7 @@ noremap \nf :NERDTreeFind<cr>
 map <F9> :NERDTree<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd BufWinEnter * NERDTreeMirror
+let NERDTreeShowLineNumbers=1
 
 " ==== Appearance ========
 
@@ -80,7 +83,7 @@ highlight nonText ctermbg=NONE
 highlight CursorLine ctermbg=NONE
 
 " special files
-au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.ejs set filetype=jst
 
 " ==== keyboard shortcuts ====
 map <Leader>m :tabn<CR>
