@@ -28,21 +28,22 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-use_color=false
+use_color=true
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
 # first to take advantage of user additions.  Use internal bash
 # globbing instead of external grep binary.
-safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
-match_lhs=""
-[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs}    ]] \
-        && type -P dircolors >/dev/null \
-        && match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+#### UNCOMMENTED THE FOLLOWING BECAUSE IT'S NOT WORKING ON DEBIAN STRETCH ####
+#safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
+#match_lhs=""
+#[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+#[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
+#[[ -z ${match_lhs}    ]] \
+#        && type -P dircolors >/dev/null \
+#        && match_lhs=$(dircolors --print-database)
+#[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
 if ${use_color} ; then
         # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
@@ -106,11 +107,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
-fi
-
-# mint-fortune
-if [ -f /usr/bin/mint-fortune ]; then
-	/usr/bin/mint-fortune
 fi
 
 # add tools to path
