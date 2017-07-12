@@ -1,0 +1,11 @@
+PATH=$PATH:~/android/tools/bin/
+PATH=$PATH:~/android/tools/bin64/
+PATH=$PATH:~/android/platform-tools/
+PATH=$PATH:~/android/tools/
+
+alias ii='xdg-open'
+alias ptim='timdata=~/Dropbox/tim/ tim'
+alias dgrep='grep --exclude-dir={.git,.svn,log,bin} -r'
+alias tclip='tmux show-buffer | xclip -sel clip -i'
+
+export PATH

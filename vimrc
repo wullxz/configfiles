@@ -15,6 +15,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'briancollins/vim-jst'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -88,6 +89,8 @@ au BufNewFile,BufRead *.ejs set filetype=jst
 " ==== keyboard shortcuts ====
 map <Leader>m :tabn<CR>
 map <Leader>n :tabp<CR>
+vmap <F7> :w !xclip -i -sel c<CR><CR>
+nmap <F8> :r !xclip -o -sel -c<CR>
 
 " ==== run current file and display output in new buffer ====
 "nnoremap <C-h> :w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR><CR>:q!
