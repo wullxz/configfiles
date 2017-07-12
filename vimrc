@@ -96,3 +96,5 @@ map <Leader>n :tabp<CR>
 " ==== html and php key bindings ===
 autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
 
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
