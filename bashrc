@@ -110,7 +110,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # add tools to path
-PATH=$PATH:/home/ms/tools/
+PATH=$PATH:~/tools/
+PATH=$PATH:~/bin/
 
 # useful lxc aliases
 lxc-ls --fancy > /dev/null 2>&1
