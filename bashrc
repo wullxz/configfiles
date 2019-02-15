@@ -113,20 +113,6 @@ fi
 PATH=$PATH:~/tools/
 PATH=$PATH:~/bin/
 
-# useful lxc aliases
-lxc-ls --fancy > /dev/null 2>&1
-fancy=$?
-if [[ $fancy -eq 0 ]]; then
-	alias lls='lxc-ls --fancy'
-else
-	alias lls='lxc-ls -1'
-fi
-alias lstart='lxc-start -d -n'
-alias lcreate='lxc-create -n'
-alias lstop='lxc-stop -n'
-alias ldestroy='lxc-destroy -n'
-alias linfo='lxc-info -n'
-alias lattach='lxc-attach -n'
 alias tmux="TERM=screen-256color-bce tmux"
 
 # helper functions
