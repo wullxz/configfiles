@@ -33,12 +33,9 @@ filetype plugin indent on    " required
 " ==== general settings ====
 let mapleader = "," " rebind <Leader> key
 set autoread
-" bind Ctrl+<movement> keys to move around the windows, instead of using
-" Ctrl+w + <movement>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+set nobackup
+set nowritebackup
+set noswapfile
 
 " ==== Plugin Configs ====
 " = AIRLINE:
@@ -90,6 +87,13 @@ map <Leader>m :tabn<CR>
 map <Leader>n :tabp<CR>
 vmap <F7> :w !xclip -i -sel c<CR><CR>
 nmap <F8> :r !xclip -o -sel -c<CR>
+nnoremap " '| " remap 'jump to mark' to "
+" bind Ctrl+<movement> keys to move around the windows, instead of using
+" Ctrl+w + <movement>
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " ==== run current file and display output in new buffer ====
 "nnoremap <C-h> :w<CR>:let g:file = expand("%:p")<CR>:new<CR>:execute "read !".g:file<CR><CR>:q!
@@ -100,3 +104,6 @@ autocmd Filetype html,php nmap <F6> :w \| ! uml %<CR><CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
+
+" === include PC specific addons ===
+so ~/.vimrc_perltidy.vim
