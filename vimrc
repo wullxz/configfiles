@@ -75,7 +75,7 @@ au Filetype * let &l:softtabstop = s:tabwidth
 " colors and themes
 set t_Co=256
 set background=dark
-colorscheme molokai
+colorscheme dracula
 
 " this fixes background problems in putty
 highlight Normal ctermbg=NONE
