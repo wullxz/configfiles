@@ -14,10 +14,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pangloss/vim-javascript'
 Plugin 'briancollins/vim-jst'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -72,7 +72,7 @@ au Filetype * let &l:softtabstop = s:tabwidth
 " colors and themes
 set t_Co=256
 set background=dark
-colorscheme molokai
+colorscheme dracula
 
 " this fixes background problems in putty
 highlight Normal ctermbg=NONE
@@ -106,4 +106,7 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
 " === include PC specific addons ===
-so ~/.vimrc_perltidy.vim
+for rcfile in split(globpath("~/.vim/includes", "*.vim"), '\n')
+  "echo "Including ".rcfile
+  execute('source '.rcfile)
+endfor
