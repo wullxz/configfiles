@@ -113,7 +113,7 @@ fi
 PATH=$PATH:~/tools/
 PATH=$PATH:~/bin/
 
-alias tmux="TERM=screen-256color-bce tmux"
+#alias tmux="TERM=screen-256color-bce tmux"
 
 # helper functions
 
