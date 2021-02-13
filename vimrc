@@ -12,9 +12,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'pangloss/vim-javascript'
-Plugin 'briancollins/vim-jst'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'briancollins/vim-jst'
+"Plugin 'udalov/kotlin-vim'
+Plugin 'liuchengxu/vista.vim'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'dracula/vim',{'as':'dracula'}
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
@@ -44,6 +47,7 @@ set guifont=Source\ Code\ Pro\ Medium\ 12
 " = NERDTree
 let NERDTreeWinPos='right'
 noremap <Leader>k :NERDTreeToggle<cr>
+noremap <Leader>j :Vista!!<cr>
 noremap \nf :NERDTreeFind<cr>
 map <F9> :NERDTree<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -63,7 +67,7 @@ set autoindent  " Copy indent from current line, over to the new line
 set shiftwidth=2
 set	tabstop=2
 
-" Set the tab width
+" Set the tab width and overwrite FileType specific options
 let s:tabwidth=2
 au Filetype * let &l:tabstop = s:tabwidth
 au Filetype * let &l:shiftwidth = s:tabwidth
@@ -107,6 +111,13 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 " === include PC specific addons ===
 for rcfile in split(globpath("~/.vim/includes", "*.vim"), '\n')
-  "echo "Including ".rcfile
+  "echom "Including ".rcfile
   execute('source '.rcfile)
 endfor
+
+" === formatting ===
+" do not indent #-comments
+set cinkeys-=0#
+set indentkeys-=0#
+
+set guifont=SauceCodePro\ Nerd\ Font\ Mono
