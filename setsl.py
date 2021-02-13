@@ -30,6 +30,7 @@ fileasoc = [
   ["bashrc", "~/.bashrc"],
   ["inputrc", "~/.inputrc"],
   ["tmux.conf", "~/.tmux.conf"],
+  ["ctags", "~/.ctags"],
   ["configfiles/vimrc/includes/", "~/.vim/includes"]
 ]
 
