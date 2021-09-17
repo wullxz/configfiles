@@ -8,8 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'dracula/vim'
+Plugin 'dracula/vim', {'name': 'dracula'}
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -18,7 +17,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'udalov/kotlin-vim'
 Plugin 'liuchengxu/vista.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'dracula/vim',{'as':'dracula'}
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
